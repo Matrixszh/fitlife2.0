@@ -1,0 +1,290 @@
+.prediction-page {
+  padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.prediction-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.prediction-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.prediction-header h1 {
+  margin: 0 0 15px 0;
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.prediction-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.prediction-form-card,
+.prediction-result-card {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(0, 212, 255, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.prediction-form-card h2,
+.prediction-result-card h2 {
+  margin: 0 0 30px 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #00d4ff;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 12px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #00ff88;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.form-group small {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 16px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+  color: #0f0f1e;
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 212, 255, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-predict {
+  font-size: 20px;
+  padding: 18px 30px;
+}
+
+.error-message {
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.2) 0%, rgba(255, 56, 56, 0.2) 100%);
+  color: #ff6b6b;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 2px solid rgba(255, 71, 87, 0.4);
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(255, 71, 87, 0.2);
+}
+
+.fallback-warning {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 152, 0, 0.2) 100%);
+  color: #ffc107;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(255, 193, 7, 0.4);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+}
+
+.ml-success {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%);
+  color: #00ff88;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(0, 255, 136, 0.4);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+}
+
+.prediction-result {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 255, 136, 0.2) 100%);
+  border-radius: 16px;
+  color: white;
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+}
+
+.predicted-activity,
+.confidence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.predicted-activity:last-child,
+.confidence:last-child {
+  border-bottom: none;
+}
+
+.activity-label,
+.confidence-label {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.activity-value {
+  font-size: 32px;
+  font-weight: 900;
+  color: #00ff88;
+  letter-spacing: 1px;
+}
+
+.confidence-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #00d4ff;
+}
+
+.prediction-info {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border-left: 4px solid #00d4ff;
+}
+
+.prediction-info p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.prediction-info-section {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(0, 212, 255, 0.1);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.prediction-info-section h3 {
+  margin: 0 0 20px 0;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.prediction-info-section ul {
+  margin: 0;
+  padding-left: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  line-height: 2;
+}
+
+.prediction-info-section li {
+  margin-bottom: 12px;
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+.prediction-info-section strong {
+  color: #00ff88;
+  font-weight: 800;
+}
