@@ -7,14 +7,20 @@
    npm install
    ```
 
-2. **Configure Firebase:**
-   - Go to [Firebase Console](https://console.firebase.google.com/)
-   - Create a new project
-   - Enable Authentication → Email/Password
-   - Create Firestore Database (start in test mode)
-   - Copy your config to `src/config/firebase.ts`
+2. **Configure MongoDB Atlas:**
+   - Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+   - Create a new cluster
+   - Get your connection string
+   - Update the connection string in `server/config/db.js`
 
-3. **Start the app:**
+3. **Start the backend server:**
+   ```bash
+   cd server
+   npm install
+   npm start
+   ```
+
+4. **Start the frontend app:**
    ```bash
    npm run dev
    ```
@@ -53,3 +59,9 @@
 - Frontend works without ML service (uses rule-based prediction)
 - All features are implemented and ready to use!
 
+
+
+mvn compile exec:java '-Dexec.mainClass=com.fitlife.ml.ActivityClassifier' '-Dexec.args=data/workout_activities.arff'
+
+
+mvn compile exec:java "-Dexec.mainClass=com.fitlife.ml.ActivityClassifier" "-Dexec.args=data/workout_activities.arff"

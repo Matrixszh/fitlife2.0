@@ -22,10 +22,9 @@ FitLife is a comprehensive fitness tracking application that helps users monitor
 
 ### Frontend
 - **Vite** + **TypeScript** + **React**
-- **Firebase** (Authentication & Firestore)
+- **MongoDB Atlas** for database
 - **React Router** for navigation
 - **Recharts** for data visualization
-- **React Firebase Hooks** for authentication state
 
 ### Backend (ML Component)
 - **Java 11+**
@@ -46,7 +45,7 @@ fitlife/
 │   │   └── Workout/            # Workout components
 │   ├── config/                 # Configuration files
 │   ├── pages/                  # Page components
-│   ├── services/               # Service layer (Firebase, ML)
+│   ├── services/               # Service layer (API, ML)
 │   └── types/                  # TypeScript type definitions
 ├── ml-component/               # Java ML component
 │   ├── src/main/java/         # Java source code
@@ -64,13 +63,20 @@ fitlife/
 npm install
 ```
 
-2. Configure Firebase:
-   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-   - Enable Authentication (Email/Password)
-   - Create a Firestore database
-   - Copy your Firebase config to `src/config/firebase.ts`
+2. Configure MongoDB Atlas:
+   - Create a MongoDB Atlas account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+   - Create a new cluster
+   - Get your connection string
+   - Update the connection string in `server/config/db.js`
 
-3. Start the development server:
+3. Start the backend server:
+   ```bash
+   cd server
+   npm install
+   npm start
+   ```
+
+4. Start the development server:
 ```bash
 npm run dev
 ```
@@ -169,7 +175,7 @@ mvn package         # Create JAR file
 ## Notes
 
 - The ML service uses a fallback rule-based prediction if the Java backend is unavailable
-- Ensure Firebase security rules are properly configured for production
+- Ensure MongoDB Atlas connection is properly configured
 - The ML model needs to be trained before the prediction service works
 - Distance should be 0 for Gym Workout activities
 

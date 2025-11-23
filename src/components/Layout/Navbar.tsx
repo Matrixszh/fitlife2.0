@@ -1,11 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../config/firebase';
+import { useAuth } from '../../contexts/AuthContext';
 import { logoutUser } from '../../services/authService';
 import './Layout.css';
 
 export default function Navbar() {
-  const [user] = useAuthState(auth);
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
