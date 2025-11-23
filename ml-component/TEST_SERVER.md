@@ -6,6 +6,14 @@ Navigate to the ml-component directory and run:
 
 ```bash
 cd ml-component
+
+train ml model 
+
+
+mvn compile exec:java '-Dexec.mainClass=com.fitlife.ml.ActivityClassifier' '-Dexec.args=data/workout_activities.arff'
+
+run ml model 
+
 mvn exec:java "-Dexec.mainClass=com.fitlife.ml.MLServer" "-Dexec.args=models/activity_classifier.model data/workout_activities.arff"
 ```
 
